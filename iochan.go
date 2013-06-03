@@ -5,7 +5,7 @@ import (
 	"io"
 )
 
-// StringReader takes an io.Reader and produces the contents of the reader
+// DelimReader takes an io.Reader and produces the contents of the reader
 // on the returned channel. The contents on the channel will be returned
 // on boundaries specified by the delim parameter, and will include this
 // delimiter.
@@ -17,7 +17,7 @@ import (
 // This must only be called once for any individual reader. The behavior is
 // unknown and will be unexpected if this is called multiple times with the
 // same reader.
-func StringReader(r io.Reader, delim byte) <-chan string {
+func DelimReader(r io.Reader, delim byte) <-chan string {
 	ch := make(chan string)
 
 	go func() {

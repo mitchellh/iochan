@@ -6,11 +6,11 @@ import (
 	"testing"
 )
 
-func TestStringReader(t *testing.T) {
+func TestDelimReader(t *testing.T) {
 	buf := new(bytes.Buffer)
 	buf.WriteString("foo\nbar\nbaz")
 
-	ch := StringReader(buf, '\n')
+	ch := DelimReader(buf, '\n')
 
 	results := make([]string, 0, 3)
 	expected := []string{"foo\n", "bar\n", "baz"}
