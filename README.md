@@ -11,4 +11,3 @@ Standard `go get`:
 ```
 $ go get github.com/mitchellh/iochan
 ```
-
